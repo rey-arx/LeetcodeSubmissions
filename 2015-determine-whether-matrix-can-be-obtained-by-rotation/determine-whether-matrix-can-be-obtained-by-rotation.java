@@ -19,12 +19,12 @@ class Solution {
            } 
             //finding the transpose:
             for(int j=0;j<mat.length;j++){
-                for(int k=0;k<mat.length;k++){
-                    if(k>j){
+                for(int k=j+1;k<mat.length;k++){
+                    
                         int temp = mat[j][k];
                         mat[j][k] = mat[k][j];
                         mat[k][j] = temp;
-                    }
+                    
                 }
             }
             // System.out.println( " trans mat" + i );
