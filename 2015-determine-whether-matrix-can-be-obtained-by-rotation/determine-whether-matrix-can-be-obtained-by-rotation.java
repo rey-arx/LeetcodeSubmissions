@@ -3,6 +3,20 @@ class Solution {
         boolean res = false;
         //looping 4 times to check all 360 degree
         for(int i=0;i<4;i++){
+            boolean res1=true;
+            for(int j=0;j<mat.length;j++){
+                for(int k=0;k<mat.length;k++){
+                    if(mat[j][k] != target[j][k]){
+                        res1 = false;
+                        break;
+                    }
+                }
+                if(res1 == false) break;
+            }
+           if(res1 == true){
+            res = true;
+            break; 
+           } 
             //finding the transpose:
             for(int j=0;j<mat.length;j++){
                 for(int k=0;k<mat.length;k++){
@@ -42,20 +56,7 @@ class Solution {
             //     System.out.println();
             // }
             // checking if equal
-            boolean res1=true;
-            for(int j=0;j<mat.length;j++){
-                for(int k=0;k<mat.length;k++){
-                    if(mat[j][k] != target[j][k]){
-                        res1 = false;
-                        break;
-                    }
-                }
-                if(res1 == false) break;
-            }
-           if(res1 == true){
-            res = true;
-            break; 
-           } 
+            
         }
         return res;
     }
